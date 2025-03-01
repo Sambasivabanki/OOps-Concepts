@@ -1,0 +1,74 @@
+class Main 
+{
+    public static void main(String[] args) 
+    {
+        
+        One o1=new One(10);
+        System.out.println(o1.a);
+        One o2=new One();
+        System.out.println(o2.a);
+        System.out.println(o2.b);
+        One o3=new One(100,20);
+        System.out.println(o3.a);
+        System.out.println(o3.b);
+        o1.display();
+        o2.display();
+    }
+}
+class One
+{
+    static int s;//static variable
+    static //static block
+    {
+        s=100;
+        System.out.println("Static block is invoked");
+    }
+    int a,b;//instance variables
+    //instance block
+    {
+        System.out.println("Hi Constructor");
+    }
+    One(int a)//Single Parameterized Constructor
+    {
+        this.a=a;
+        System.out.println("Single Parameterized Constructor");
+    }
+    One()//non- Parameterized Constructor
+    {
+        a=0;
+        b=0;
+        System.out.println("non- Parameterized Constructor");
+    }
+    One(int a,int b)//Parameterized Constructor
+    {
+        this();
+        this.a=a;
+        this.b=b;
+        System.out.println("Parameterized Constructor");
+    }
+    void display()//instance method
+    {
+        System.out.println("instance method");
+    }
+    static void get()//Static method
+    {
+        System.out.println("Static method ");
+    }
+}
+
+Output:
+Static block is invoked
+Hi Constructor
+Single Parameterized Constructor
+10
+Hi Constructor
+non- Parameterized Constructor
+0
+0
+Hi Constructor
+non- Parameterized Constructor
+Parameterized Constructor
+100
+20
+instance method
+instance method
