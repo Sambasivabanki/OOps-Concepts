@@ -1,0 +1,44 @@
+class Mymath
+{
+   int add(int a,int b)
+    {
+        return a+b;
+    }
+    int add(int a,int b,int c)
+    {
+        return a+b+c;
+    }
+   float add(float a,float b)
+    {
+        return a+b;
+    }
+    double add(double a,double b)
+    {
+        return a+b;
+    }
+    long add(long a,long b)
+    {
+        return a+b;
+    }
+}
+public class MethodOverLoading 
+{
+    public static void main(String[] args) 
+    {
+        Mymath m=new Mymath();
+       double r1= m.add(10.0, 2.0);
+       int r2= m.add(2, 3);
+       double r3= m.add(1,2,3);
+       double r4=m.add(2.5f,4.5f);
+       System.out.println("r1 \t"+r1);
+       System.out.println("r2 \t"+r2);
+       System.out.println("r3 \t"+r3);
+       System.out.println("r4 \t"+r4);
+    }    
+}
+
+Output:
+r1      12.0
+r2      5
+r3      6.0
+r4      7.0
