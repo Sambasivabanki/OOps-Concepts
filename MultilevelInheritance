@@ -1,0 +1,54 @@
+class Base
+{
+    int a;
+    Base(int a)
+    {
+        this.a=a;
+    }
+    void display()
+    {
+        
+        System.out.println("a:\t"+a);
+    }
+}
+class Child extends Base
+{
+    int b;
+    Child(int a,int b)
+    {
+        super(a);
+        this.b=b;
+    }
+    void display()
+    {
+        super.display();
+        System.out.println("b:\t"+b);
+    }
+}
+class Subchild extends Child
+{
+    int c;
+    Subchild(int a,int b,int c)
+    {
+        super(a,b);
+        this.c=c;
+    }
+    void display()
+    {
+        super.display();
+        System.out.println("c:\t"+c);
+    }
+}
+public class MultilevelInher 
+{
+    public static void main(String[] args) 
+    {
+        Subchild s1=new Subchild(100, 200, 300);
+        s1.display();
+    }
+}
+
+Output:
+a:      100                                                                                                                          
+b:      200
+c:      300
