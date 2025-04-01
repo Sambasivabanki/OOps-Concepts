@@ -1,0 +1,37 @@
+class Main
+{
+    public static void main(String[] args)
+    {
+        student s=new student();
+        s.setsid(101);
+        s.setsname("samba");
+        System.out.println(s.getsid());
+        System.out.println(s.getsname());
+    }
+}
+class student
+{
+    private int sid;
+    private String sname;
+
+public void setsid(int sid)
+{
+    this.sid=sid;
+}
+public int getsid()
+{
+    return sid;
+}
+public void setsname(String sname)
+{
+    this.sname=sname;
+}
+public String getsname()
+{
+    return sname;
+}
+}
+
+Output:
+101
+samba
