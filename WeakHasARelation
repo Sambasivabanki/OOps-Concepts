@@ -1,0 +1,37 @@
+//WeakHas A Relation //
+class Engine
+{
+    int engineNo;
+    Engine(int engineNo)
+    {
+        this.engineNo=engineNo;
+    }
+    public void finalize()
+    {
+        System.out.println("Engine object is destroyed");
+    }
+}
+class car
+{
+    Engine engine;
+    car(Engine engine)
+    {
+        this.engine=engine;
+    }
+    public void finalize()
+    {
+        System.out.println("car object is destroyed");
+    }
+}
+public class WeakRelation {
+    public static void main(String[] args) 
+    {
+        Engine engine=new Engine(1111);
+        car c=new car(engine);
+        c=null;
+        System.gc();
+    }
+}
+
+Output:
+car object is destroyed
