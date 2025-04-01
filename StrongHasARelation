@@ -1,0 +1,31 @@
+class Engine
+{
+    int engineNo;
+    Engine(int engineNo)
+    {
+        this.engineNo=engineNo;
+    }
+    public void finalize()
+    {
+        System.out.println("Engine object is destroyed");
+    }
+}
+class car
+{
+    Engine engine=new Engine(2222);
+    public void finalize()
+    {
+        System.out.println("car object is destroyed");
+    }
+}
+public class StrongRelation {
+    public static void main(String[] args) 
+    {
+        car c=new car();
+        c=null;
+        System.gc();
+    }
+}
+Output:
+Engine object is destroyed
+car object is destroyed
